@@ -24,14 +24,23 @@ class Calculator:
         self.__result %= a
 
     def power(self, a):
-        self.__result ^= a
+        base = 1
+        print(self.__result)
+        for i in range(1, a + 1):
+            base *= self.__result 
+        self.__result = base
 
     def square_root(self):
-        self.__result ^= 0.5
+        calculated_result = 1
+        i = 1
+        while calculated_result <= self.__result:
+            i += 1
+            calculated_result = i * i
+        i -= 1
+        self.__result = i
 
     def clear(self):
         self.__result = 0
 
     def get_result(self):
         return self.__result
-
